@@ -1,0 +1,167 @@
+/* =========================================
+   SELECTED WORK GALLERY
+========================================= */
+
+.selected-work {
+    background: #f7f9fc;
+    padding: 110px 0;
+    border-top: 1px solid #e5e9ef;
+}
+
+
+/* Gallery Grid */
+
+.work-gallery {
+    display: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.work-gallery.active-gallery {
+    display: grid;
+}
+
+
+/* 1080 x 1080 Square */
+
+.work-gallery-item {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #e9edf3;
+
+    opacity: 0;
+    transform: translateY(30px);
+
+    animation: galleryReveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+
+/* Images + Videos */
+
+.work-gallery-item img,
+.work-gallery-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Video Background */
+
+.work-gallery-item video {
+    background: #000;
+}
+
+
+/* Animation Delay */
+
+.work-gallery-item:nth-child(2) {
+    animation-delay: 0.08s;
+}
+
+.work-gallery-item:nth-child(3) {
+    animation-delay: 0.16s;
+}
+
+.work-gallery-item:nth-child(4) {
+    animation-delay: 0.24s;
+}
+
+.work-gallery-item:nth-child(5) {
+    animation-delay: 0.32s;
+}
+
+.work-gallery-item:nth-child(6) {
+    animation-delay: 0.40s;
+}
+
+.work-gallery-item:nth-child(7) {
+    animation-delay: 0.48s;
+}
+
+.work-gallery-item:nth-child(8) {
+    animation-delay: 0.56s;
+}
+
+.work-gallery-item:nth-child(9) {
+    animation-delay: 0.64s;
+}
+
+.work-gallery-item:nth-child(10) {
+    animation-delay: 0.72s;
+}
+
+.work-gallery-item:nth-child(11) {
+    animation-delay: 0.80s;
+}
+
+.work-gallery-item:nth-child(12) {
+    animation-delay: 0.88s;
+}
+
+
+/* Image Hover */
+
+.work-gallery-item img {
+    transition: transform 0.7s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .work-gallery-item:hover img {
+        transform: scale(1.04);
+    }
+
+}
+
+
+/* Gallery Animation */
+
+@keyframes galleryReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Selected Work Visibility */
+
+.selected-work {
+    display: none;
+}
+
+.selected-work.show {
+    display: block;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .selected-work {
+        padding: 80px 0;
+    }
+
+    .work-gallery {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .work-gallery-item {
+        aspect-ratio: 1 / 1;
+    }
+
+}
