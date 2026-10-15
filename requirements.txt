@@ -1,15 +1,2 @@
 Flask>=3.0,<4.0
 gunicorn
-# Large Photoshop source files
-*.psd
-
-# Python cache
-__pycache__/
-*.py[cod]
-
-# Virtual environments
-.venv/
-venv/
-
-# Environment secrets
-.env
